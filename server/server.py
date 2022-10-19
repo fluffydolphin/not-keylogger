@@ -3,6 +3,7 @@ from threading import Thread
 import random
 import argparse
 import sys
+import os
 
 
 parser = argparse.ArgumentParser(
@@ -28,15 +29,12 @@ separator_token = "<SEP>"
 
 name = "server"
 
-
-
 def listen_for_client(cs):
     while True:
         try:
             msg = cs.recv(1024).decode()
         except Exception as e:
-            client_socket.close()
-            client_sockets.remove(client_socket)
+            os.execv(sys.executable, ['python'] + sys.argv)        
         else:
             msg = msg.replace(separator_token, ": ")
         for client_socket in client_sockets:
@@ -58,7 +56,7 @@ def listen_for_messages(cs):
             client_socket.close()
             client_sockets.remove(client_socket)
         else:
-            with open("log.txt", "w") as file1:
+            with open("/home/hoey/php/not-keylogger/server/log/log.txt", "w") as file1:
                 file1.writelines(f"{message} \n")
 
 nodes = []
