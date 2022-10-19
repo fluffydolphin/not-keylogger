@@ -21,10 +21,6 @@ parser.add_argument(
 args = parser.parse_args()
 
 
-if len(sys.argv) <= 1:
-    parser.print_help()
-    sys.exit(1)
-
 if not args.host:
     print("Host required! \n")
     parser.print_help()
@@ -33,7 +29,6 @@ if not args.host:
 
 s = socket.socket()
 s.connect((args.host, args.port))
-print("[+] Connected.")
 
 
 node_number = s.recv(1024).decode()
