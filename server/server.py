@@ -21,12 +21,14 @@ host =  "0.0.0.0"
 
 name = "server"
 
-def listen_for_client(cs):
+def listen_for_client(cs, client_sockets):
     while True:
         try:
             msg = cs.recv(1024).decode()
-            with open("log.txt", "w") as file1:
-                file1.writelines(f"{msg} \n")
+            for cs in client_sockets:
+                addr = cs.getpeername()[0]
+                with open(f"{addr}-log.txt", "a+") as file1:
+                    file1.write(f"{msg}")
         except Exception as e:
                 client_socket.close()
                 client_sockets.remove(client_socket)      
@@ -50,7 +52,7 @@ while True:
     client_socket, client_address = s.accept()
     print(f"[+] {client_address} connected.") 
     client_sockets.add(client_socket)
-    t = Thread(target=listen_for_client, args=(client_socket,))
+    t = Thread(target=listen_for_client, args=(client_socket, client_sockets))
     t.daemon = True
     t.start()
 
