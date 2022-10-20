@@ -31,7 +31,7 @@ s = socket.socket()
 s.connect((args.host, args.port))
 
 
-node_number = s.recv(1024).decode()
+node_number = 'vers'
 
 
 def listen_for_messages():
