@@ -1,7 +1,7 @@
 # not keylogger - is a simple python keylogging script
 
 ## What is keylogger?
-not logger is basically a keylogging script using sockets to communicate with the attacker and pynput.keyboard in python that listens for keystrokes then sends them to the attacker through sockets.
+not logger is basically a keylogging script using sockets to communicate with the attacker and pynput.keyboard that listens for keystrokes then sends them to the attacker through sockets.
 
 1. The server binds sockets together so that the client and nodes can connect.
 2. After the node has started and connected to the server it then listens with pynput
