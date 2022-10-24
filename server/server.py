@@ -27,7 +27,7 @@ def listen_for_client(cs, client_sockets):
             msg = cs.recv(1024).decode()
             for cs in client_sockets:
                 addr = cs.getpeername()[0]
-                with open(f"{addr}-log.txt", "a+") as file1:
+                with open(f"/data/logs/{addr}-log.txt", "a+") as file1:
                     file1.write(f"{msg}")
         except Exception as e:
                 client_socket.close()
