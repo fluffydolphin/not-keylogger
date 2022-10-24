@@ -9,7 +9,7 @@ not logger is basically a keylogging script using sockets to communicate with th
 
 # How to install and run?
 
-## Docker
+## Docker install
 
 https://hub.docker.com/repository/docker/fluffydolphin/logger-server
 
