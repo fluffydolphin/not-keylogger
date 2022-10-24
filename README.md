@@ -7,11 +7,13 @@ not logger is basically a keylogging script using sockets to communicate with th
 2. After the node has started and connected to the server it then listens with pynput
 3. Then the server saves all the keystrokes to a log file on the server side
 
-## How to install and run?
+# How to install and run?
 
-You can run the server side in docker https://hub.docker.com/repository/docker/fluffydolphin/logger-server
+## Docker
 
-How to install git for cloning
+https://hub.docker.com/repository/docker/fluffydolphin/logger-server
+
+## How to install git for cloning
 
 1. Install git
    ```sh
@@ -20,7 +22,7 @@ How to install git for cloning
 
 
 
-Cloning using git.
+## Cloning using git.
 
 1. Clone the repo
    ```sh
