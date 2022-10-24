@@ -9,6 +9,8 @@ not logger is basically a keylogging script using sockets to communicate with th
 
 ## How to install and run?
 
+You can run the server side in docker https://hub.docker.com/repository/docker/fluffydolphin/logger-server
+
 How to install git for cloning
 
 1. Install git
