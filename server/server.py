@@ -4,6 +4,7 @@ import random
 import argparse
 import sys
 import os
+from cryptography.fernet import Fernet
 
 
 parser = argparse.ArgumentParser(
@@ -22,12 +23,15 @@ host =  "0.0.0.0"
 name = "server"
 
 def listen_for_client(cs, client_sockets):
+    enc_key = b'fXpsGp9mJFfNYCTtGeB2zpY9bzjPAoaC0Fkcc13COy4='
     while True:
         try:
-            msg = cs.recv(1024).decode()
+            msg = cs.recv(1024)
+            msg = Fernet(enc_key).decrypt(msg)
+            msg = msg.decode()
             for cs in client_sockets:
                 addr = cs.getpeername()[0]
-                with open(f"/data/logs/{addr}-log.txt", "a+") as file1:
+                with open(f"{addr}-log.txt", "a+") as file1:
                     file1.write(f"{msg}")
         except Exception as e:
                 client_socket.close()
