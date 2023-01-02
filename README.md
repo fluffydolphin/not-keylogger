@@ -1,4 +1,4 @@
-# not keylogger - is a simple python keylogging script
+# not keylogger - is a simple encrypted keylogger
 
 ## What is keylogger?
 not logger is basically a keylogging script using sockets to communicate with the attacker and pynput.keyboard that listens for keystrokes then sends them to the attacker through sockets.
