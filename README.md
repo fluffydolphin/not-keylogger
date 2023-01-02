@@ -56,23 +56,3 @@ https://hub.docker.com/repository/docker/fluffydolphin/logger-server
    ```
   
 That's all it takes to install and run not keylogger.
-
-## Commands and Configuration for not keylogger
-It is possible to modify the behaviour of not keylogger with cli
-arguments. In order to get an up-to-date help document, just run
-`-h`.
-
-you can change the server ip on the client and bot but not on the server, the default host ip on the server is 0.0.0.0 (localhost).
-
-* -p, --port
-* * Port of the Server, default 422
-
-
-These commands are for after you have started not keylogger and adjusted the behaviour
-
-* !help!
-* * Shows you this
-* !connected!
-* * Shows you how many and which nodes are connected based on there number
-* !quit!
-* * This is used for quiting either the client or the noded (you have to use this or else you will get a broken pipe error) 
